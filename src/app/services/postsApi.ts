@@ -16,13 +16,13 @@ export const postApi = api.injectEndpoints({
         method: "GET",
       }),
     }),
-    getPostById: builder.query<Post, { id: string }>({
+    getPostById: builder.query<Post, string>({
       query: id => ({
         url: `/posts/${id}`,
         method: "GET",
       }),
     }),
-    deletePost: builder.mutation<void, { id: string }>({
+    deletePost: builder.mutation<void, string>({
       query: id => ({
         url: `/posts/${id}`,
         method: "DELETE",
