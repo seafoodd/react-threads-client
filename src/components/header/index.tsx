@@ -1,16 +1,16 @@
-import React, { useContext } from "react"
-import { ThemeContext } from "../theme-provider"
+import React, { useContext } from "react";
+import { ThemeContext } from "../theme-provider";
 import {
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-} from "@nextui-org/react"
-import { FaRegMoon } from "react-icons/fa"
-import { LuSunMedium } from "react-icons/lu"
+} from "@nextui-org/react";
+import { FaRegMoon } from "react-icons/fa";
+import { LuSunMedium } from "react-icons/lu";
 
 const Header = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext)
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <div>
@@ -29,7 +29,7 @@ const Header = () => {
         </NavbarContent>
       </Navbar>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

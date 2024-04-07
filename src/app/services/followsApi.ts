@@ -1,5 +1,5 @@
-import { api } from "./api"
-import { Follows } from "../types"
+import { api } from "./api";
+import { Follows } from "../types";
 
 export const followsApi = api.injectEndpoints({
   endpoints: builder => ({
@@ -17,10 +17,10 @@ export const followsApi = api.injectEndpoints({
       }),
     }),
   }),
-})
+});
 
-export const { useFollowUserMutation, useUnfollowUserMutation } = followsApi
+export const { useFollowUserMutation, useUnfollowUserMutation } = followsApi;
 
 export const {
   endpoints: { followUser, unfollowUser },
-} = followsApi
+} = followsApi;

@@ -1,5 +1,5 @@
-import { api } from "./api"
-import { Like } from "../types"
+import { api } from "./api";
+import { Like } from "../types";
 
 export const likesApi = api.injectEndpoints({
   endpoints: builder => ({
@@ -17,10 +17,10 @@ export const likesApi = api.injectEndpoints({
       }),
     }),
   }),
-})
+});
 
-export const { useLikePostMutation, useUnlikePostMutation } = likesApi
+export const { useLikePostMutation, useUnlikePostMutation } = likesApi;
 
 export const {
   endpoints: { likePost, unlikePost },
-} = likesApi
+} = likesApi;

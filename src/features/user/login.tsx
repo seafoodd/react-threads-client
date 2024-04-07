@@ -1,20 +1,23 @@
-import React, { useState } from "react"
-import { useForm } from "react-hook-form"
-import Input from "../../components/input"
-import { Button, Link } from "@nextui-org/react"
-import { useLazyCurrentQuery, useLoginMutation } from "../../app/services/userApi"
-import { useNavigate } from "react-router-dom"
-import { hasErrorFiled } from "../../utils/has-error-filed"
-import ErrorMessage from "../../components/error-message"
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import Input from "../../components/input";
+import { Button, Link } from "@nextui-org/react";
+import {
+  useLazyCurrentQuery,
+  useLoginMutation,
+} from "../../app/services/userApi";
+import { useNavigate } from "react-router-dom";
+import { hasErrorFiled } from "../../utils/has-error-filed";
+import ErrorMessage from "../../components/error-message";
 
 type Login = {
-  email: string
-  password: string
-}
+  email: string;
+  password: string;
+};
 
 type Props = {
-  setSelected: (value: string) => void
-}
+  setSelected: (value: string) => void;
+};
 
 const Login: React.FC<Props> = ({ setSelected }) => {
   const {
@@ -28,24 +31,24 @@ const Login: React.FC<Props> = ({ setSelected }) => {
       email: "",
       password: "",
     },
-  })
+  });
 
-  const [login, { isLoading }] = useLoginMutation()
-  const navigate = useNavigate()
-  const [error, setError] = useState("")
-  const [triggerCurrentQuery] = useLazyCurrentQuery()
+  const [login, { isLoading }] = useLoginMutation();
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const [triggerCurrentQuery] = useLazyCurrentQuery();
 
   const onSubmit = async (data: Login) => {
     try {
-      await login(data).unwrap()
+      await login(data).unwrap();
       await triggerCurrentQuery().unwrap();
-      navigate('/')
+      navigate("/");
     } catch (e) {
       if (hasErrorFiled(e)) {
-        setError(e.data.error)
+        setError(e.data.error);
       }
     }
-  }
+  };
 
   return (
     <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
@@ -82,7 +85,7 @@ const Login: React.FC<Props> = ({ setSelected }) => {
         </Button>
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

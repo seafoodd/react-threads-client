@@ -1,16 +1,16 @@
-import React from "react"
-import { Control, useController } from "react-hook-form"
-import { Input as NextInput } from "@nextui-org/react"
+import React from "react";
+import { Control, useController } from "react-hook-form";
+import { Input as NextInput } from "@nextui-org/react";
 
 type Props = {
-  name: string
-  label: string
-  placeholder?: string
-  type?: string
-  control: Control<Any>
-  required?: string
-  endContent?: JSX.Element
-}
+  name: string;
+  label: string;
+  placeholder?: string;
+  type?: string;
+  control: Control<Any>;
+  required?: string;
+  endContent?: JSX.Element;
+};
 
 const Input: React.FC<Props> = ({
   name,
@@ -31,7 +31,7 @@ const Input: React.FC<Props> = ({
     rules: {
       required,
     },
-  })
+  });
   return (
     <NextInput
       id={name}
@@ -45,7 +45,7 @@ const Input: React.FC<Props> = ({
       onBlur={field.onBlur}
       errorMessage={`${errors[name]?.message ?? ""}`}
     ></NextInput>
-  )
-}
+  );
+};
 
-export default Input
+export default Input;

@@ -1,15 +1,15 @@
-import React from "react"
-import { useCurrentQuery } from "../../app/services/userApi"
-import { Spinner } from "@nextui-org/react"
+import React from "react";
+import { useCurrentQuery } from "../../app/services/userApi";
+import { Spinner } from "@nextui-org/react";
 
 const AuthGuard = ({ children }: { children: JSX.Element }) => {
-  const { isLoading } = useCurrentQuery()
+  const { isLoading } = useCurrentQuery();
 
   if (isLoading) {
-    return <Spinner />
+    return <Spinner />;
   }
 
-  return <>{children}</>
-}
+  return <>{children}</>;
+};
 
-export default AuthGuard
+export default AuthGuard;

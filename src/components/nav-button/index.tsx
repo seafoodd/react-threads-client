@@ -1,15 +1,15 @@
-import React from "react"
-import Button from "../button"
-import { useNavigate } from "react-router-dom"
+import React from "react";
+import Button from "../button";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
-  children: React.ReactNode
-  icon: JSX.Element
-  href: string
-}
+  children: React.ReactNode;
+  icon: JSX.Element;
+  href: string;
+};
 
 const NavButton: React.FC<Props> = ({ children, icon, href }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <Button
@@ -19,7 +19,7 @@ const NavButton: React.FC<Props> = ({ children, icon, href }) => {
     >
       {children}
     </Button>
-  )
-}
+  );
+};
 
-export default NavButton
+export default NavButton;

@@ -1,23 +1,23 @@
-import React, { useState } from "react"
-import Input from "../../components/input"
-import { Button, Link } from "@nextui-org/react"
-import { useForm } from "react-hook-form"
+import React, { useState } from "react";
+import Input from "../../components/input";
+import { Button, Link } from "@nextui-org/react";
+import { useForm } from "react-hook-form";
 import {
   useLazyCurrentQuery,
   useRegisterMutation,
-} from "../../app/services/userApi"
-import { useNavigate } from "react-router-dom"
-import { hasErrorFiled } from "../../utils/has-error-filed"
-import ErrorMessage from "../../components/error-message"
+} from "../../app/services/userApi";
+import { useNavigate } from "react-router-dom";
+import { hasErrorFiled } from "../../utils/has-error-filed";
+import ErrorMessage from "../../components/error-message";
 
 type Register = {
-  email: string
-  name: string
-  password: string
-}
+  email: string;
+  name: string;
+  password: string;
+};
 type Props = {
-  setSelected: (value: string) => void
-}
+  setSelected: (value: string) => void;
+};
 const Register: React.FC<Props> = ({ setSelected }) => {
   const {
     handleSubmit,
@@ -31,22 +31,22 @@ const Register: React.FC<Props> = ({ setSelected }) => {
       password: "",
       name: "",
     },
-  })
-  const [register, { isLoading }] = useRegisterMutation()
-  const navigate = useNavigate()
-  const [error, setError] = useState("")
-  const [triggerCurrentQuery] = useLazyCurrentQuery()
+  });
+  const [register, { isLoading }] = useRegisterMutation();
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const [triggerCurrentQuery] = useLazyCurrentQuery();
 
   const onSubmit = async (data: Register) => {
     try {
-      await register(data).unwrap()
-      setSelected("login")
+      await register(data).unwrap();
+      setSelected("login");
     } catch (e) {
       if (hasErrorFiled(e)) {
-        setError(e.data.error)
+        setError(e.data.error);
       }
     }
-  }
+  };
   return (
     <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
       <Input
@@ -89,7 +89,7 @@ const Register: React.FC<Props> = ({ setSelected }) => {
         </Button>
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;
