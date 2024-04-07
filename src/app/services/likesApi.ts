@@ -3,7 +3,7 @@ import { Like } from "../types";
 
 export const likesApi = api.injectEndpoints({
   endpoints: builder => ({
-    likePost: builder.mutation<Like, string>({
+    likePost: builder.mutation<Like, { postId: string }>({
       query: postId => ({
         url: `/likes`,
         method: "POST",
