@@ -38,7 +38,7 @@ const Login: React.FC<Props> = ({ setSelected }) => {
   const onSubmit = async (data: Login) => {
     try {
       await login(data).unwrap()
-      await triggerCurrentQuery();
+      await triggerCurrentQuery().unwrap();
       navigate('/')
     } catch (e) {
       if (hasErrorFiled(e)) {
