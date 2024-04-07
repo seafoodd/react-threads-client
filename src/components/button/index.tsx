@@ -1,5 +1,5 @@
 import React from "react"
-import { Button as NextButton, NextUIProvider } from "@nextui-org/react"
+import { Button as NextButton } from "@nextui-org/react"
 
 type Props = {
   children: React.ReactNode
