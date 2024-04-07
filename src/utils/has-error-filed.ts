@@ -8,5 +8,5 @@ export const hasErrorFiled = (
     typeof err.data === "object" &&
     err.data !== null &&
     "error" in err.data
-  )
-}
+  );
+};

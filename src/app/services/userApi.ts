@@ -1,5 +1,5 @@
-import { api } from "./api"
-import { User } from "../types"
+import { api } from "./api";
+import { User } from "../types";
 
 export const userApi = api.injectEndpoints({
   endpoints: builder => ({
@@ -43,9 +43,9 @@ export const userApi = api.injectEndpoints({
       }),
     }),
   }),
-})
+});
 
-const {
+export const {
   useRegisterMutation,
   useLoginMutation,
   useCurrentQuery,
@@ -53,8 +53,8 @@ const {
   useGetUserByIdQuery,
   useLazyGetUserByIdQuery,
   useUpdateUserMutation,
-} = userApi
+} = userApi;
 
 export const {
   endpoints: { login, register, current, getUserById, updateUser },
-} = userApi
+} = userApi;

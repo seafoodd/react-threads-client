@@ -1,5 +1,5 @@
-import { api } from "./api"
-import { Post } from "../types"
+import { api } from "./api";
+import { Post } from "../types";
 
 export const postApi = api.injectEndpoints({
   endpoints: builder => ({
@@ -29,7 +29,7 @@ export const postApi = api.injectEndpoints({
       }),
     }),
   }),
-})
+});
 
 export const {
   useCreatePostMutation,
@@ -38,8 +38,8 @@ export const {
   useDeletePostMutation,
   useLazyGetAllPostsQuery,
   useLazyGetPostByIdQuery,
-} = postApi
+} = postApi;
 
 export const {
   endpoints: { createPost, getAllPosts, getPostById, deletePost },
-} = postApi
+} = postApi;

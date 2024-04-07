@@ -1,5 +1,5 @@
-import { api } from "./api"
-import { Comment } from "../types"
+import { api } from "./api";
+import { Comment } from "../types";
 
 export const commentsApi = api.injectEndpoints({
   endpoints: builder => ({
@@ -17,11 +17,11 @@ export const commentsApi = api.injectEndpoints({
       }),
     }),
   }),
-})
+});
 
 export const { useCreateCommentMutation, useDeleteCommentMutation } =
-  commentsApi
+  commentsApi;
 
 export const {
   endpoints: { createComment, deleteComment },
-} = commentsApi
+} = commentsApi;

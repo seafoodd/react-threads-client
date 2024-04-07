@@ -1,9 +1,9 @@
-import { api } from "./api"
-import { Like } from "../types"
+import { api } from "./api";
+import { Like } from "../types";
 
 export const likesApi = api.injectEndpoints({
   endpoints: builder => ({
-    likePost: builder.mutation<Like, string>({
+    likePost: builder.mutation<Like, { postId: string }>({
       query: postId => ({
         url: `/likes`,
         method: "POST",
@@ -17,10 +17,10 @@ export const likesApi = api.injectEndpoints({
       }),
     }),
   }),
-})
+});
 
-export const { useLikePostMutation, useUnlikePostMutation } = likesApi
+export const { useLikePostMutation, useUnlikePostMutation } = likesApi;
 
 export const {
   endpoints: { likePost, unlikePost },
-} = likesApi
+} = likesApi;
